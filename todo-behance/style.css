@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Signika:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.active {
+    color: #c98afe;
+    font-size: 19px;
+}
+
+/* Убираем обводку с всех элементов при фокусе */
+:focus {
+    outline: none;
+}
+
+/* Или можно выбрать конкретные элементы, например, для ссылок и кнопок */
+a:focus, button:focus {
+    outline: none;
+}
+
+.hidden-section {
+    display: none;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    border: none;
+    list-style: none;
+}
+
+a {
+    color:#000;
+}
+
+body {
+    background-color: #846aee;
+}
+
+.window-todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.wrapper-for-section {
+    display: flex;
+    height: 650px;
+    margin: 70px auto;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
+.navigation {
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.name-user-todo {
+    display: flex;
+    align-items:center;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 60px;
+}
+.name-user-todo::before {
+    content: '';
+    background-color: #846aee;
+    width: 100px;
+    height: 2px;
+    position: absolute;
+    bottom: -15px;
+    left: 42px;
+}
+
+.name-user-todo img {
+    height: 60px;
+}
+
+.name-user-todo p {
+    color: rgb(145, 145, 145);
+    padding: 5px;
+}
+.name-user-todo h5 {
+    color: #a18aff;
+    font-size: 16px;
+    padding: 0px 5px;
+}
+
+.field-navigation {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.field-navigation img {
+    height: 25px;
+}
+
+.item-navigation {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.navigation-style-sample {
+    margin-left: 20px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+.item-navigation div {
+    display: flex;
+    align-items:center;
+}
+
+.btn-filter {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+}
+
+.item-navigation {
+    width: 200px;
+}
+
+.filters-wrapper {
+    display: flex;
+    align-items:center;
+    margin-bottom: 10px;
+}
+
+.filters-wrapper.nav-active .btn-filter {
+    color:#fff !important;
+}
+
+
+
+
+
+
+.todo-section {
+    background-color:#a18aff;
+    border: 10px solid #fff;
+    border-radius: 20px;
+    width: 600px;
+    position: relative;
+}
+
+.list-filters {
+    margin-left: 40px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.5s ease;
+}
+
+.list-filters button {
+    padding: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 500;
+    background-color: transparent;
+    transition: transform 0.5s ease;
+}
+
+
+.list-filters {
+    opacity: 0;
+    visibility: hidden; /* Элемент скрыт */
+    max-height: 0; /* Начальная высота */
+    transition: opacity 0.3s ease, max-height 0.7s ease, visibility 0s 0.7s; /* Плавные переходы */
+}
+
+.list-filters.visible {
+    opacity: 1;
+    visibility: visible; /* Элемент видим */
+    max-height: 500px; /* Достаточная высота, чтобы элемент был виден */
+    transition: opacity 0.3s ease, max-height 0.7s ease; /* Плавный переход */
+}
+
+.todo-section h1 {
+    color: #fff;
+    margin:30px 0px 0px 60px;
+    font-weight: 600;
+}
+.todo-section h2 {
+    color: #fff;
+    margin:10px 0px 0px 60px;
+    font-weight: 800;
+}
+
+.input-main-todo {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.time {
+    position: absolute;
+    top: 110px;
+    right: 140px;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.time.time-active {
+    visibility: visible;
+    opacity: 1;
+}
+.time input {
+    top: 10px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+.send-time {
+    border-bottom-right-radius:20px;
+    border-top-right-radius: 20px;
+    padding: 1px;
+}
+
+.input-for-task {
+    width: 300px;
+    padding: 15px;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-weight: 700;
+}
+
+
+.input-main-todo button {
+    background-color: #fff;
+    padding: 7px;
+    height: 46px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.send-btn {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.input-main-todo button:hover {
+    background-color: #ffffffbe;
+}
+.input-main-todo button:active {
+    background-color: #e9e9e9b7;
+}
+
+.tasks {
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    margin-top: 30px;
+    max-height: 410px;
+    overflow-y: auto;
+}  
+.tasks::-webkit-scrollbar {
+    width: 10px; /* Ширина полосы прокрутки */
+}
+
+.tasks::-webkit-scrollbar-thumb {
+    background: #888; /* Цвет ползунка */
+    border-radius: 5px; /* Закругление ползунка */
+}
+
+.tasks::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Цвет фона полосы */
+    border-radius: 10px;
+}
+
+.task-item {
+    display: flex;
+    background-color: #fff;
+    width: 400px;
+    padding: 10px;
+    align-items: center;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-item button {
+    margin-bottom: -3px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.task-inner {
+    width: 275px;
+    margin-left: 20px;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+#taskTime {
+    margin-right: 5px;
+}
+
+.task-item {
+    background-color: #ffffff; /* Задача видима по умолчанию */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Плавное изменение */
+    transform: translateY(0); /* Начальное положение */
+}
+
+.task-item.completed {
+    background-color: #ffffff77; /* Полупрозрачность для выполненной задачи */
+    transform: translateY(-10px); /* Лёгкое смещение вверх */
+}
+
+.time-input {
+    font-size: 13px;
+}
+
+.deleteBtn {
+    background-color: #e21111 !important;
+    width: 20px;
+    color:#fff;
+    height: 25px;
+    border-radius: 20px;
+    margin-left: 0px;
+
+    transition: transform 0.3s ease;
+}
+
+
+.task-item:hover {
+    transform: scale(1.1);
+}
+
+.task-item.deleting {
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.deleteBtn:hover {
+    transform: scale(1.1);
+}
+
+.nav-active {
+    background-color: #846aee;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease;
+}
+
+.active-text {
+    color: #fff;
+}
+
+.item-navigation img {
+    transition: transform 0.3s ease;
+}
+
+.item-navigation img:hover {
+    transform: scale(1.2);
+}
+
+.tasks .task-item {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.todo-section:hover  h2 {
+    color: #ffffff;
+    text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.6);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.wrapper-for-section {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#name-users {
+    cursor: pointer;
+    word-wrap: break-word; /* Позволяет переносить слова */
+    max-width: 100px; /* Ограничение ширины текста */
+}
+
+
+.input-name {
+    background-color: #846aeea1;
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 2px;
+    color: #fff;
+    border-bottom-right-radius:0px;
+    border-top-right-radius:0px;
+
+}
+.input-name::placeholder {
+    color: #ffffffb4;  
+}
+
+#saveName {
+    background-color: #846aeea1;
+    height: 34px;
+    border-radius: 20px;
+    border-bottom-left-radius:0px;
+    border-top-left-radius:0px;
+    padding: 2px;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+
+    transition: background-color 0.5s ease;
+}
+#saveName:hover {
+    background-color: #846aee77;
+}
+
+
+#btnAll {
+    
+}
+
+.list-filters {
+    position: relative;
+}
+
+.empty-text {
+    font-size: 40px;
+    margin:60px auto 0px auto;
+    color: #ffffff86;
+}
+
+
+.list-filters {
+    gap: 10px;
+    display: flex;
+    position: relative;
+}
+
+.list-filters button {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.list-filters button li {
+    list-style: none;
+    font-size: 16px;
+    color: #000;
+    position: relative;
+}
+
+.list-filters button::after {
+    content: '';
+    position: absolute;
+    background-color: #846aee; /* Purple color */
+    height: 2px;
+    width: 0;
+    left: 0;
+    transition: width 0.3s ease; /* Smooth animation */
+}
+
+.list-filters button:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
+
+.btn-completed:hover .completed-line::after {
+    width: 90px; /* Expand the width on hover */
+}
+
+/* Настройки секций */
+.settings {
+    padding: 20px;
+}
+.settings h2 {
+    margin-bottom: 40px;
+}
+
+.setting-item {
+    margin-bottom: 20px;
+}
+
+.setting-item h3 {
+    color: #846aee;
+    border-bottom: 2px solid #846aee;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.theme-toggle input {
+    display: none;
+}
+
+.theme-toggle .slider {
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle .slider:before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 14px;
+    height: 14px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle input:checked + .slider {
+    background-color: #846aee;
+}
+
+.theme-toggle input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+
+
+/* Кнопки */
+button.primary {
+    background-color: #846aee;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.primary:hover {
+    background-color: #a18aff;
+}
+
+button.primary:active {
+    background-color: #7b61d1;
+}
+
+.reset-wrapper {
+    display: flex;
+    align-items:center
+}
+
+.danger {
+    background-color: #846aeea1;
+    width: 75px;
+    height: 34px;
+    border-radius: 20px;
+    padding: 2px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 15px;
+
+    transition: background-color 0.5s ease;
+}
+.danger:hover {
+    background-color: #846aee77;
+}
+
+.setting-item div {
+    display: flex;
+}
+
+:root {
+    --background-color: #ffffff;
+    --background-color-body: #6d48fd;
+    --background-color-nav: #fffdfd;
+    --background-color-section: #a18aff;
+    --background-color-completed: #e2e2e26b;
+    --text-color: #000000;
+    --border-color: #846aee;
+    --slider-bg: #ccc;
+    --slider-active-bg: #846aee;
+    --button-bg: #846aee;
+    --button-hover-bg: #a18aff;
+    --button-active-bg: #7b61d1;
+}
+
+[data-theme="dark"] {
+    --background-color: #474747;
+    --background-color-nav: #535252;
+    --background-color-body: #4a34a0;
+    --background-color-section: #624db8;
+    --background-color-completed: #61616185;
+    --text-color: #ffffff;
+    --border-color: #a18aff;
+    --slider-bg: #444;
+    --slider-active-bg: #a18aff;
+    --button-bg: #a18aff;
+    --button-hover-bg: #7b61d1;
+    --button-active-bg: #5e46b4;
+}
+
+body {
+    background-color: var(--background-color-body);
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.navigation-style-sample {
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.wrapper-for-section {
+    background-color: var(--background-color-nav);
+    transition: background-color 0.3s ease;
+}
+.navigation {
+    background-color: var(--background-color-nav);
+    transition: background-color 0.3s ease;
+}
+.todo-section {
+    border-color: var(--background-color-nav);
+    transition: background-color 0.3s ease,border-color 0.3s ease;
+}
+.todo-section {
+    background-color: var(--background-color-section);
+    transition: background-color 0.3s ease;
+}
+
+.settings h2, .setting-item h3 {
+    color: var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle .slider {
+    background-color: var(--slider-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle input:checked + .slider {
+    background-color: var(--slider-active-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.primary {
+    background-color: var(--button-bg);
+    transition: background-color 0.3s ease;
+    color: var(--text-color);
+}
+
+button.primary:hover {
+    background-color: var(--button-hover-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.primary:active {
+    background-color: var(--button-active-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.task-item {
+    background-color: var(--background-color);
+}
+.task-item.completed {
+    background-color: var(--background-color-completed);
+}

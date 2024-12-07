@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo App</title>
+</head>
+<body>
+    <div class="window-todo">
+        <div class="wrapper-for-section">
+            <section class="navigation">
+                <div class="name-user-todo">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="">
+                    <div>
+                        <p data-lang="do-it">Do-it</p>
+                        <h5 id="name-users" data-lang="your-name">Your Name?</h5>
+                    </div>
+                </div>
+
+    
+                <div class="field-navigation">
+                    <div class="item-navigation">
+                        <div class="filters-wrapper">
+                            <img src="/img/filter.png" alt="">
+                            <button class="btn-filter navigation-style-sample" data-lang="filters-tasks">Filters Tasks</button>
+                        </div>
+                        <ul class="list-filters">
+                            <button class="btn-all" id="btnAll" data-lang="all">
+                                <li>All</li>
+                            </button>
+                            <button class="btn-active" id="btnActive" data-lang="active">
+                                <li>Active</li>
+                            </button>
+                            <button class="btn-completed" id="btnCompleted" data-lang="completed">
+                                <li>Completed</li>
+                            </button>
+                        </ul>
+                    </div>
+                    
+                    <div class="item-navigation item-navigation-tasks nav-active">
+                        <div>
+                            <img src="/img/calendar.png" alt="">
+                            <p class="navigation-style-sample tasks-text" data-lang="tasks">Tasks</p>
+                        </div>                    
+                    </div>
+
+                    <div class="item-navigation item-navigation-settings">
+                        <div>
+                            <img src="/img/settings.png" alt="">
+                            <p class="navigation-style-sample settings-text" data-lang="settings">Settings</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="todo-section">
+                <div class="todo">
+                    <h1 data-lang="focus-for-today">Focus for Today</h1>
+                    <h2 id="mainFocus" data-lang="stay-productive">Stay Productive</h2>
+    
+                    <div class="input-main-todo">
+                        <div class="time">
+                            <input type="text" class="time-input" placeholder="08:00 , 23:20">
+                        </div>
+                        <input class="input-for-task" id="inputTask" type="text" placeholder="What is your next task?">
+                        <button>
+                            <img id="showTime" src="https://cdn-icons-png.flaticon.com/512/109/109613.png" height="30px" alt="">
+                        </button>
+                        <button class="send-btn" data-lang="save">
+                            <img id="sendBtn" src="https://static-00.iconduck.com/assets.00/send-icon-2048x1863-u8j8xnb6.png" height="30px" alt="">
+                        </button>
+                    </div>
+    
+                    <div class="tasks">
+                        
+                    </div>
+                </div>
+
+                <div class="settings hidden-section">
+                    <h2 data-lang="settings">Settings</h2>
+                    <!-- Theme Toggle -->
+                    <div class="setting-item">
+                        <h3 data-lang="theme">Theme</h3>
+                        <label class="theme-toggle">
+                            <input type="checkbox" id="themeSwitch">
+                            <span class="slider"></span>
+                        </label>
+                        <p id="currentTheme" data-lang="current-theme">Current Theme: Light</p>
+                    </div>
+                
+                    <!-- Edit Profile -->
+                    <div class="setting-item">
+                        <h3 data-lang="edit-profile">Edit Profile</h3>
+                        <label for="editName" data-lang="your-name">Your Name:</label>
+                        <div>
+                            <input type="text" class="input-name" id="editName" placeholder="Enter new name">
+                            <button id="saveName" data-lang="save">Save</button>
+                        </div>
+                    </div>
+                
+                    <!-- Reset Tasks -->
+                    <div class="setting-item">
+                        <h3 data-lang="reset-tasks">Reset Tasks</h3>
+                        <div class="reset-wrapper">
+                            <p data-lang="clear-tasks">Clear all tasks from your todo list.</p>
+                            <button id="resetTasks" class="danger" data-lang="reset-tasks-btn">Reset Tasks</button>
+                        </div>
+                    </div>
+                    <div class="setting-item">
+                        <h3 data-lang="reset-tasks">Language</h3>
+                        <div class="reset-wrapper">
+                            <button id="changeLang">Change Language</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="module" src="settings.js"></script>
+    <script type="module" src="language.js"></script>
+</body>
+</html>
